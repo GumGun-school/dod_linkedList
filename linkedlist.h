@@ -21,13 +21,25 @@ uint8_t LL_insert(struct list *container, int64_t index, void *ptr);
 
 uint8_t LL_enqueue(struct list *container, void *ptr);
 
-uint8_t LL_delete(struct list *container, int64_t index);
+uint8_t LL_delete(struct list *container, void **returnHolder, int64_t index);
 
-uint8_t LL_delteList(struct list *container);
+// esta funcion no es valida con nuestro esquema de memoria
+/*********/  uint8_t LL_delteList(struct list *container);
 
-uint8_t LL_editNode(struct list *container, int64_t index, void *ptr);
+// se tiene que modificar para aceptar el apuntador antiguo
+uint8_t LL_editNode(struct list *container, void **returnHolder, int64_t index, void *ptr);
 
-int32_t LL_get(struct list *container, int64_t index);
+// se tiene que modificar para aceptar el apuntador antiguo
+int32_t LL_get(struct list *container, void **returnHolder, int64_t index);
 
 void bdg_print(struct list *container);
 
+
+
+
+/*
+
+Esqumas de memoria
+
+
+*/
